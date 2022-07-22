@@ -3,7 +3,7 @@ import { Input as NBInput, IInputProps } from 'native-base';
 const Input = ({ ...rest }: IInputProps) => {
   return (
     <NBInput
-      width="98%"
+      width="full"
       bg="gray.700"
       h={14}
       size="md"

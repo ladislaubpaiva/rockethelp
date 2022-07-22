@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { VStack, Heading, Icon, useTheme, View } from 'native-base';
+import { VStack, Heading, Icon, useTheme } from 'native-base';
 
 import Logo from '../assets/logo_primary.svg';
 import { Envelope, Key } from 'phosphor-react-native';
@@ -18,7 +18,7 @@ export function SignIn() {
       <Heading textAlign="center" mt={6} mb={20}>
         <Logo />
       </Heading>
-      <View h={32} justifyContent="space-between">
+      <VStack space={4}>
         <Input
           placeholder="E-mail"
           InputLeftElement={
@@ -32,8 +32,8 @@ export function SignIn() {
             <Icon ml={4} as={<Key color={colors.gray[300]} />} />
           }
         />
-      </View>
-      <Button title="Sign In" w="98%" mt={8} />
+      </VStack>
+      <Button title="Sign In" w="full" mt={8} />
     </VStack>
   );
 }
