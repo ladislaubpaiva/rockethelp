@@ -80,7 +80,7 @@ export function Home() {
             </Center>
           )}
         />
-        <Button title="New request" />
+        <Button title="New Request" />
       </VStack>
     </VStack>
   );
