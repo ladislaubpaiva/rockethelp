@@ -5,6 +5,9 @@ import {
   StyledProps,
   useTheme,
 } from 'native-base';
+
+import { useNavigation } from '@react-navigation/native';
+
 import { CaretLeft } from 'phosphor-react-native';
 
 type Props = StyledProps & {
@@ -13,6 +16,13 @@ type Props = StyledProps & {
 
 export function Header({ title, ...props }: Props) {
   const { colors } = useTheme();
+
+  const navigation = useNavigation();
+
+  function handleNewOrder() {
+    navigation.goBack();
+  }
+
   return (
     <HStack
       w="full"
@@ -22,7 +32,10 @@ export function Header({ title, ...props }: Props) {
       pb={6}
       pt={12}
     >
-      <IconButton icon={<CaretLeft color={colors.gray[200]} size={24} />} />
+      <IconButton
+        icon={<CaretLeft color={colors.gray[200]} size={24} />}
+        onPress={handleNewOrder}
+      />
       <Heading
         color="gray.100"
         textAlign="center"
